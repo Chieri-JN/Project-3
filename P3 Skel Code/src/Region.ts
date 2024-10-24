@@ -237,6 +237,7 @@ export class Region {
         if (this.loaded && !this.loadError && this.image) {
                
             // **** YOUR CODE HERE ****
+            ctx.drawImage(this.image, 0, 0);
 
         }
         

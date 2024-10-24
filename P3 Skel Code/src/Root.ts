@@ -71,9 +71,20 @@ export class Root {
     protected _redraw() {
         const saveBatching = this._batchingDamage;
         this._batchingDamage = true;
+        const ctx = this.canvasContext; 
         try {
-
+        
         // **** YOUR CODE HERE ****
+            // clear context
+            // save state...
+            
+            //draw the children
+            this._children.forEach((child) => {
+                ctx.save();
+                ctx.translate(child.x, child.y);
+                child.draw(ctx, true);
+                ctx.restore();
+            })
 
         // currently, for ease of debugging, we let exceptions propogate out from this 
         // redraw (and typically all the out of our code).  this will basically shut 

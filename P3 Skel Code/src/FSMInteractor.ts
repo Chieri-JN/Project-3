@@ -124,6 +124,13 @@ export class FSMInteractor {
         if (!this.fsm) return;
 
         // **** YOUR CODE HERE ****
+        this.fsm.regions.forEach(function(region) {
+            ctx.save();
+            // transate 
+            ctx.translate(region.x, region.y);
+            region.draw(ctx, true);
+            ctx.restore();
+        })
     }   
 
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
