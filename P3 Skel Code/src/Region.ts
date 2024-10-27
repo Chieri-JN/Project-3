@@ -93,6 +93,13 @@ export class Region {
     public set x(v : number) {
             
         // **** YOUR CODE HERE ****
+        // declare damage
+        if (this._x !== v){
+            this._x = v;
+            this.damage();
+            
+        }
+
     }
        
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -103,6 +110,12 @@ export class Region {
     public set y(v : number) {
             
         // **** YOUR CODE HERE ****
+        // declare damage
+        if (this._y !== v){
+            this._y = v;
+            this.damage();
+            
+        }
     }   
 
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -114,6 +127,12 @@ export class Region {
     public set w(v : number) {
             
         // **** YOUR CODE HERE ****
+        // declare damage
+        if (this._w !== v){
+            this._w = v;
+            this.damage();
+            
+        }
     }  
 
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -125,6 +144,13 @@ export class Region {
     public set h(v : number) {
             
         // **** YOUR CODE HERE ****
+        // declare damage
+        if (this._h !== v){
+            this._h = v;
+            this.damage();
+            
+        }
+
     }  
 
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -156,6 +182,11 @@ export class Region {
     public set parent(v : FSM | undefined) {
             
         // **** YOUR CODE HERE ****
+        if (!( this._parent === v)){
+            this.damage();
+            this._parent = v;
+            this.damage();
+        }
     }
 
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -258,6 +289,7 @@ export class Region {
     public damage() {
             
         // **** YOUR CODE HERE ****
+        this.parent?.damage();
     }
 
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .

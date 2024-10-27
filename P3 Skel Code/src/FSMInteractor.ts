@@ -58,6 +58,11 @@ export class FSMInteractor {
     public set x(v : number) {
           
         // **** YOUR CODE HERE ****
+        if (!(this._x === v)){
+            this._x = v;
+            this.damage();
+            
+        }
     }
 
     // Y position (top) of this object within the parent Root object (and containing 
@@ -67,6 +72,11 @@ export class FSMInteractor {
     public set y(v : number) {
             
         // **** YOUR CODE HERE ****
+        if (!(this._y === v)){
+            this._y = v;
+            this.damage();
+            
+        }
     }
 
     // Position treated as a single value
@@ -91,6 +101,11 @@ export class FSMInteractor {
     public set parent(v : Root | undefined) {
             
         // **** YOUR CODE HERE ****
+        if (!( this._parent === v)){
+            this.damage();
+            this._parent = v;
+            this.damage();
+        }
     }
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
@@ -111,6 +126,8 @@ export class FSMInteractor {
     public damage() {
            
         // **** YOUR CODE HERE ****
+        this.parent?.damage();
+
     }
     
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
