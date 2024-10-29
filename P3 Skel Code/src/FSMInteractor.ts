@@ -160,21 +160,35 @@ export class FSMInteractor {
     // is ordered in reverse regions drawing order (regions drawn later, appear
     // earlier in the list) so that the region drawn on top of other objects appear
     // before them in the list.
+    // r1 -> r2 -> r3 (list order)
+    // r3 -> r2 -> r1 (draw order)
     public pick(localX : number, localY : number) : Region[] {
         let pickList :Region[] = [];
 
         // if we have no FSM, there is nothing to pick
         if (!this.fsm) return pickList;
-           
+
         // **** YOUR CODE HERE ****
 
-        return pickList;
+        // go through regions of current fms 
+        this._fsm?.regions.forEach(function(region){
+            // if ((region.x <= localX && localX <= region.x + region.w) && 
+            //     (region.y <= localY && localY <= region.y + region.h)){
+            //         // if point is within region bounds, add region to pickList
+            //         pickList.push(region);
+            //     } 
+            if (region.pick(localX, localY)) pickList.push(region);
+        })
+        //reverse pickList at end
+        return  pickList.reverse();
     }
 
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
         
         // **** YOUR CODE HERE ****   
+        private prevRegions: Region[] = []; // keep track of the regions we were in last time
+
         // You will need some persistent bookkeeping for dispatchRawEvent()
 
     // Dispatch the given "raw" event by translating it into a series of higher-level
@@ -194,13 +208,74 @@ export class FSMInteractor {
     // last drawn region should be dispatched first (i.e., events are delivered in 
     // reverse region drawing order). Note that all generated higher-level events
     // are dispatched to the FSM (via its actOnEvent() method).
+
+    // exit events -> enter events -> press -> moveInside -> release -> release none
+    // exit r, enter r, press r, move_inside r, release r, release none
     public dispatchRawEvent(what : 'press' | 'move' | 'release', 
                             localX : number, localY : number) 
     {
         // if we have no FSM, there is nothing to dispatch to
-        if (this.fsm === undefined) return;
-
+        if (!this.fsm) return;
+        
         // **** YOUR CODE HERE ****
+        const currReg = this.pick(localX, localY)
+        // console.log("Events!!")
+
+        if(!(this._fsm === undefined)){
+            if (what === "move"){
+                // console.log("Moved!!") 
+                
+            // check if we left a region or if we moved inside
+            // iterate through list of previous regions
+            this.prevRegions.forEach((region) => {
+                // check bounds 
+                // in bounds -> dispatch move inside
+                if ((region.x <= localX && localX <= region.x + region.w) &&
+                    (region.y <= localY && localY <= region.y + region.h)){
+                    this._fsm?.actOnEvent("move_inside", region);
+
+                // out bounds -> dispatch exit
+                }else{
+                    this._fsm?.actOnEvent("exit", region);
+                }
+            });
+
+            // apply enter to current regions not in prev regions
+            currReg.forEach((region) => {
+                // all regions no in prevRegions
+                if (!this.prevRegions.includes(region)){
+                    this._fsm?.actOnEvent("enter", region);
+                }
+            });
+
+            }else if (what === 'press') {
+                console.log("Pressed!!")
+                // dipatch press to all applicable regions
+                currReg.forEach((region) => {
+                    // console.log("Pressed", region.name) 
+
+                    this._fsm?.actOnEvent('press', region);
+                });
+    
+            }else if (what === 'release') { 
+                // console.log("Released!!")
+
+                // there is nothing to release
+                if (this.prevRegions.length === 0) { 
+                    this._fsm.actOnEvent("release_none");
+                    return;
+                } 
+                // otherwise we dipatch release to regions prevRegions
+                this.prevRegions.forEach((region) => {
+                    this._fsm?.actOnEvent("release", region);
+                });
+    
+            }
+            // finally update previous regions to current regions once done
+            this.prevRegions = currReg;
+        }
+        
+
     }
 
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .

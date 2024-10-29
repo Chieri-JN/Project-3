@@ -40,6 +40,9 @@ import { Err } from "./Err.js";
 //=================================================================== 
 export class FSMInteractor {
     constructor(fsm = undefined, x = 0, y = 0, parent) {
+        //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        // **** YOUR CODE HERE ****   
+        this.prevRegions = []; // keep track of the regions we were in last time
         this._fsm = fsm;
         this._x = x;
         this._y = y;
@@ -126,16 +129,28 @@ export class FSMInteractor {
     // is ordered in reverse regions drawing order (regions drawn later, appear
     // earlier in the list) so that the region drawn on top of other objects appear
     // before them in the list.
+    // r1 -> r2 -> r3 (list order)
+    // r3 -> r2 -> r1 (draw order)
     pick(localX, localY) {
+        var _a;
         let pickList = [];
         // if we have no FSM, there is nothing to pick
         if (!this.fsm)
             return pickList;
         // **** YOUR CODE HERE ****
-        return pickList;
+        // go through regions of current fms 
+        (_a = this._fsm) === null || _a === void 0 ? void 0 : _a.regions.forEach(function (region) {
+            // if ((region.x <= localX && localX <= region.x + region.w) && 
+            //     (region.y <= localY && localY <= region.y + region.h)){
+            //         // if point is within region bounds, add region to pickList
+            //         pickList.push(region);
+            //     } 
+            if (region.pick(localX, localY))
+                pickList.push(region);
+        });
+        //reverse pickList at end
+        return pickList.reverse();
     }
-    //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    // **** YOUR CODE HERE ****   
     // You will need some persistent bookkeeping for dispatchRawEvent()
     // Dispatch the given "raw" event by translating it into a series of higher-level
     // events which are formulated in terms of the regions of our FSM.  "Raw" events 
@@ -154,11 +169,67 @@ export class FSMInteractor {
     // last drawn region should be dispatched first (i.e., events are delivered in 
     // reverse region drawing order). Note that all generated higher-level events
     // are dispatched to the FSM (via its actOnEvent() method).
+    // exit events -> enter events -> press -> moveInside -> release -> release none
+    // exit r, enter r, press r, move_inside r, release r, release none
     dispatchRawEvent(what, localX, localY) {
         // if we have no FSM, there is nothing to dispatch to
-        if (this.fsm === undefined)
+        if (!this.fsm)
             return;
         // **** YOUR CODE HERE ****
+        const currReg = this.pick(localX, localY);
+        // console.log("Events!!")
+        if (!(this._fsm === undefined)) {
+            if (what === "move") {
+                // console.log("Moved!!") 
+                // check if we left a region or if we moved inside
+                // iterate through list of previous regions
+                this.prevRegions.forEach((region) => {
+                    var _a, _b;
+                    // check bounds 
+                    // in bounds -> dispatch move inside
+                    if ((region.x <= localX && localX <= region.x + region.w) &&
+                        (region.y <= localY && localY <= region.y + region.h)) {
+                        (_a = this._fsm) === null || _a === void 0 ? void 0 : _a.actOnEvent("move_inside", region);
+                        // out bounds -> dispatch exit
+                    }
+                    else {
+                        (_b = this._fsm) === null || _b === void 0 ? void 0 : _b.actOnEvent("exit", region);
+                    }
+                });
+                // apply enter to current regions not in prev regions
+                currReg.forEach((region) => {
+                    var _a;
+                    // all regions no in prevRegions
+                    if (!this.prevRegions.includes(region)) {
+                        (_a = this._fsm) === null || _a === void 0 ? void 0 : _a.actOnEvent("enter", region);
+                    }
+                });
+            }
+            else if (what === 'press') {
+                console.log("Pressed!!");
+                // dipatch press to all applicable regions
+                currReg.forEach((region) => {
+                    // console.log("Pressed", region.name) 
+                    var _a;
+                    (_a = this._fsm) === null || _a === void 0 ? void 0 : _a.actOnEvent('press', region);
+                });
+            }
+            else if (what === 'release') {
+                // console.log("Released!!")
+                // there is nothing to release
+                if (this.prevRegions.length === 0) {
+                    this._fsm.actOnEvent("release_none");
+                    return;
+                }
+                // otherwise we dipatch release to regions prevRegions
+                this.prevRegions.forEach((region) => {
+                    var _a;
+                    (_a = this._fsm) === null || _a === void 0 ? void 0 : _a.actOnEvent("release", region);
+                });
+            }
+            // finally update previous regions to current regions once done
+            this.prevRegions = currReg;
+        }
     }
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     // Method to begin an asychnous load of a FSM_json object from a remotely loaded 

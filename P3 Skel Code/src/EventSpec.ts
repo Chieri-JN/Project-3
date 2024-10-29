@@ -104,7 +104,7 @@ export class EventSpec {
     public match(evtType : EventType, regn? : Region) : boolean {
           
         // **** YOUR CODE HERE ****
-
+        
         // **** Remove this: just here to get it to compile... ****
         return false;
     }

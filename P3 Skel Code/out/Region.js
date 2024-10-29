@@ -129,8 +129,14 @@ export class Region {
     // coordinates of this object) should be considered "inside" or "over" this region.
     pick(localX, localY) {
         // **** YOUR CODE HERE ****
-        // **** Remove this, it's just here to make this compile as-is
-        return false;
+        // if ((this.x <= localX && localX <= this.x + this.w) && 
+        //     (this.y <= localY && localY <= this.y + this.h)){
+        //     // if point is within region bounds
+        //     return true;
+        // } 
+        // // **** Remove this, it's just here to make this compile as-is
+        // return false;
+        return ((this.x <= localX && localX <= this.x + this.w) && (this.y <= localY && localY <= this.y + this.h));
     }
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     // Draw the image for this region using the givn drawing context.  The context 

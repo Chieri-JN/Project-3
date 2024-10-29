@@ -78,7 +78,6 @@ export class Root {
         // **** YOUR CODE HERE ****
             // clear context
             // save state...
-            
             //draw the children
             this._children.forEach((child) => {
                 ctx.save();
