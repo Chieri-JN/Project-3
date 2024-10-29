@@ -43,8 +43,8 @@ export class Transition {
     // event types and their meaning).
     match(evtType, regn) {
         // **** YOUR CODE HERE ****
+        return this.onEvent.match(evtType, regn);
         // **** Remove this, it's just here to get this file to compile
-        return false;
     }
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
     // Attempt to look up the name of the target state for this transition and 

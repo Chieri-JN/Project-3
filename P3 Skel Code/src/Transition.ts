@@ -90,9 +90,9 @@ export class Transition {
     public match(evtType : EventType, regn? : Region) : boolean {
            
         // **** YOUR CODE HERE ****
-
+        return this.onEvent.match(evtType, regn);
         // **** Remove this, it's just here to get this file to compile
-        return false;
+    
     }
     
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 

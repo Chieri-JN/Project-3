@@ -101,17 +101,31 @@ export class FSM {
         // names we need to look up / bind are found in transitions: in named target 
         // state, region names in event specs, and region names in actions.
         // walk over all the transitions in all the states to get those bound
-        // **** YOUR CODE HERE ****
+        // **** YOUR CODE HERE ****   
+        // iterate through each state 
+        this._states.forEach((s) => {
+            // look at transitions to this state
+            s.transitions.forEach((t) => {
+                // bind state to the stransitions
+                t.bindTarget(this._states);
+                t.actions.forEach((a) => {
+                    a.bindRegion(this._regions);
+                });
+            });
+        });
         // start state is the first one
         // **** YOUR CODE HERE ****
+        this._startState = this._states[0];
         // need to link all regions back to this object as their parent
         // **** YOUR CODE HERE ****
+        this._regions.forEach((r) => { r.parent = this; });
     }
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     // Reset the FSM to be in its start state.  Note: this does not reset
     // region images to their original states.
     reset() {
         // **** YOUR CODE HERE ****
+        this._currentState = this._startState;
     }
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
     // Cause the FSM to act on the given event: represented by an event type (see 
@@ -125,6 +139,17 @@ export class FSM {
         if (!this.currentState)
             return;
         // **** YOUR CODE HERE ****
+        // go through transitions
+        for (let t of this.currentState.transitions) {
+            if (t.match(evtType, reg)) {
+                t.actions.forEach((a) => {
+                    a.execute(evtType, reg);
+                });
+                // change states
+                this._currentState = t.target;
+                return; // we dont want to consider any thing after
+            }
+        }
     }
     //-------------------------------------------------------------------
     // Debugging Support
