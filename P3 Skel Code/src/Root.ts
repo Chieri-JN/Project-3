@@ -69,7 +69,7 @@ export class Root {
     // saves the state of the drawing context, puts it in the child coordinate system,
     // draws the child, and then restors the context.
     protected _redraw() {
-        console.log("redraw called...");
+        // console.log("redraw called...");
         const saveBatching = this._batchingDamage;
         this._batchingDamage = true;
         const ctx = this.canvasContext; 

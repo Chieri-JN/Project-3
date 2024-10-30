@@ -85,7 +85,14 @@ export class EventSpec {
         }
      
         // **** YOUR CODE HERE ****
+        // find the correct region 
+        for (let reg of regionList){
 
+            if (this._regionName === reg.name){
+                this._region = reg;
+                return;
+            }
+        }
         // we didn't match any region, that's ok for some forms that don't need a region
         if (this.evtType === 'nevermatch') return;
         if ((this.evtType === 'release_none' || this.evtType === 'any') && 
@@ -104,9 +111,14 @@ export class EventSpec {
     public match(evtType : EventType, regn? : Region) : boolean {
           
         // **** YOUR CODE HERE ****
-        
+        // If there is a even type mismatch
+        if (!(this._evtType === evtType) && !(this._evtType === "any")) return false;
+        // match to anything
+        if (!this._region && this._regionName === "*")return true;
+        // see if we match
+        if (regn) return regn.name === this._regionName;
+        return this._regionName === "";
         // **** Remove this: just here to get it to compile... ****
-        return false;
     }
     
     //-------------------------------------------------------------------

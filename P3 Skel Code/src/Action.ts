@@ -81,9 +81,31 @@ export class Action {
     // Carry out the action represented by this object.  evtType and evtReg describe
     // the event which is causing the action (for use by print_event actions).
     public execute(evtType : EventType, evtReg? : Region) { 
-        if (this._actType === 'none') return;
+        if (this._actType === 'none') return; 
         
         // **** YOUR CODE HERE ****
+        if (this._actType === 'set_image'){
+            if (this._onRegion){
+                // set image w/ curretn location
+                this._onRegion.imageLoc = this._param;                
+            }else{
+                Err.emit(`No region to act on`);
+            }
+        }else if (this._actType === 'clear_image'){
+            if (this._onRegion){
+                // clear image by setting it to empty image
+                this._onRegion.imageLoc = "";
+            }else{
+                Err.emit(`No region to act on`)
+            }
+        }else if (this._actType === 'print'){
+            console.log(this.param);
+        }else if (this._actType === 'print_event'){
+            console.log(`${this.param}${evtType}(region:${evtReg?.name})`);
+        }else{
+            Err.emit(`Something went wrong... ${this._actType}`);
+        }
+
     }
 
      //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -93,6 +115,12 @@ export class Action {
     public bindRegion(regionList : readonly Region[]) : void {
             
         // **** YOUR CODE HERE ****
+        for (let reg of regionList){
+            if (this._onRegionName === reg.name){
+                this._onRegion = reg;
+                return;
+            }
+        }
         
         // ok to have no matching region for some actions
         if (this.actType === 'none' || this.actType === 'print' || 

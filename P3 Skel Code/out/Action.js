@@ -32,12 +32,46 @@ export class Action {
         if (this._actType === 'none')
             return;
         // **** YOUR CODE HERE ****
+        if (this._actType === 'set_image') {
+            if (this._onRegion) {
+                // console.log(`Set Image on ${this._onRegion.name}`);
+                this._onRegion.imageLoc = this._param;
+            }
+            else {
+                Err.emit(`No region to act on`);
+            }
+        }
+        else if (this._actType === 'clear_image') {
+            // console.log("Cleared Image")
+            if (this._onRegion) {
+                // console.log(`Cleared Image on ${this._onRegion.name}`);
+                this._onRegion.imageLoc = "";
+            }
+            else {
+                Err.emit(`No region to act on`);
+            }
+        }
+        else if (this._actType === 'print') {
+            console.log(this.param);
+        }
+        else if (this._actType === 'print_event') {
+            console.log(`${this.param}${evtType}(region:${evtReg === null || evtReg === void 0 ? void 0 : evtReg.name})`);
+        }
+        else {
+            Err.emit(`Something went wrong... ${this._actType}`);
+        }
     }
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     // Attempt to find the name listed for this region in the given list of regions
     // (from the whole FSM), assiging the Region object to this._onRegion if found.
     bindRegion(regionList) {
         // **** YOUR CODE HERE ****
+        for (let reg of regionList) {
+            if (this._onRegionName === reg.name) {
+                this._onRegion = reg;
+                return;
+            }
+        }
         // ok to have no matching region for some actions
         if (this.actType === 'none' || this.actType === 'print' ||
             this.actType === 'print_event') {

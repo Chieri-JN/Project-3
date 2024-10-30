@@ -104,6 +104,14 @@ export class Transition {
     public bindTarget(stateList : readonly State[]) : void {
             
         // **** YOUR CODE HERE ****
+        // if(!this._target) return;
+        for (let state of stateList){
+            // if we find name
+            if(this._targetName === state.name){
+                this._target = state;
+                return;
+            }
+        }
 
         // no matching state name, so generate an error message
         Err.emit(`State '${this._targetName}' in transition does not match any state.`);

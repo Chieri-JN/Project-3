@@ -250,14 +250,6 @@ export class Region {
     public pick(localX : number, localY : number) : boolean {
             
         // **** YOUR CODE HERE ****
-        // if ((this.x <= localX && localX <= this.x + this.w) && 
-        //     (this.y <= localY && localY <= this.y + this.h)){
-        //     // if point is within region bounds
-        //     return true;
-        // } 
-        // // **** Remove this, it's just here to make this compile as-is
-        // return false;
-
         return ((this.x <= localX && localX <= this.x + this.w) && (this.y <= localY && localY <= this.y + this.h))
     }
 
@@ -274,6 +266,7 @@ export class Region {
         if (this.loaded && !this.loadError && this.image) {
                
             // **** YOUR CODE HERE ****
+            ctx.clearRect(0,0 ,this._w, this._h)
             ctx.drawImage(this.image, 0, 0);
 
         }

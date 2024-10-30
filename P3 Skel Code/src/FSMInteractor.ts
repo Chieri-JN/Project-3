@@ -249,7 +249,7 @@ export class FSMInteractor {
             });
 
             }else if (what === 'press') {
-                console.log("Pressed!!")
+                // console.log("Pressed!!")
                 // dipatch press to all applicable regions
                 currReg.forEach((region) => {
                     // console.log("Pressed", region.name) 

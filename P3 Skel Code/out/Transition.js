@@ -53,6 +53,14 @@ export class Transition {
     // the FSM (in which case an error message will also be generted using Err.emit()).
     bindTarget(stateList) {
         // **** YOUR CODE HERE ****
+        // if(!this._target) return;
+        for (let state of stateList) {
+            // if we find name
+            if (this._targetName === state.name) {
+                this._target = state;
+                return;
+            }
+        }
         // no matching state name, so generate an error message
         Err.emit(`State '${this._targetName}' in transition does not match any state.`);
     }
