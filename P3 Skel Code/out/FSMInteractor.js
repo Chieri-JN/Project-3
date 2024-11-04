@@ -134,6 +134,7 @@ export class FSMInteractor {
     pick(localX, localY) {
         var _a;
         let pickList = [];
+        ``;
         // if we have no FSM, there is nothing to pick
         if (!this.fsm)
             return pickList;

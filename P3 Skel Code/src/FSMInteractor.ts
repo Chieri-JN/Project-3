@@ -164,7 +164,7 @@ export class FSMInteractor {
     // r3 -> r2 -> r1 (draw order)
     public pick(localX : number, localY : number) : Region[] {
         let pickList :Region[] = [];
-
+``
         // if we have no FSM, there is nothing to pick
         if (!this.fsm) return pickList;
 

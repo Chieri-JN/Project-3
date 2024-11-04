@@ -266,6 +266,7 @@ export class Region {
         if (this.loaded && !this.loadError && this.image) {
                
             // **** YOUR CODE HERE ****
+            // clear region of anything that was previously there.
             ctx.clearRect(0,0 ,this._w, this._h)
             ctx.drawImage(this.image, 0, 0);
 

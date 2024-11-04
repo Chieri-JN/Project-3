@@ -34,7 +34,7 @@ export class Action {
         // **** YOUR CODE HERE ****
         if (this._actType === 'set_image') {
             if (this._onRegion) {
-                // console.log(`Set Image on ${this._onRegion.name}`);
+                // set image w/ curretn location
                 this._onRegion.imageLoc = this._param;
             }
             else {
@@ -42,9 +42,8 @@ export class Action {
             }
         }
         else if (this._actType === 'clear_image') {
-            // console.log("Cleared Image")
             if (this._onRegion) {
-                // console.log(`Cleared Image on ${this._onRegion.name}`);
+                // clear image by setting it to empty image
                 this._onRegion.imageLoc = "";
             }
             else {
