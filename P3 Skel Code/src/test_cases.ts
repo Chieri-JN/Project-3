@@ -86,12 +86,17 @@ function test3() {
 	- Idle Left
 	- Idle Right
 	- Move Left
-	- Morve right 
+	- Move right 
 	- Jump Left
 	- Jump Rights
+	Maybe
+	- Damage left
+	- Damage Right
+
+	Sprites acquired from https://bagong-games.itch.io/hana-caraka-base-character
 */
 function customFSM() {
 	let fsmInt = new FSMInteractor(undefined, 0,0);
 	root.addChild(fsmInt);
-	fsmInt.startLoadFromJson("./fsm_json/slime.json");
+	fsmInt.startLoadFromJson("./fsm_json/character.json");
 }

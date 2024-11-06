@@ -1,0 +1,18 @@
+{
+    "regions" : [
+        {"name": "Idle_left", "x": 100, "y": 600, "imageLoc": "./images/slimeIdleLeft.png"},
+        
+        {"name": "Idle_right", "x": 0, "y": 600, "imageLoc": "./images/slimeIdleRight.png"},
+        {"name": "Move_left", "x": 0, "y": 600, "imageLoc": "./images/slimeMoveLeft.png"},
+        {"name": "Move_right", "x": 0, "y": 600, "imageLoc": "./images/slimeMoveRight.png"},
+        {"name": "Jump_left", "x": 0, "y": 600, "imageLoc": "./images/slimeJumpLeft.png"},
+        {"name": "Jump_right", "x": 0, "y": 600, "imageLoc": "./images/slimeJumpRight.png"},
+
+        {"name": "UP", "x": 200, "y": 500 , "imageLoc": "./images/UP.png"},
+        {"name": "LEFT", "x": 100, "y": 600 , "imageLoc": "./images/LEFT.png"},
+        {"name": "RIGHT", "x": 300, "y": 600 , "imageLoc": "./images/RIGHT.png"}
+    ],
+    "states"  : [
+
+    ]
+}
