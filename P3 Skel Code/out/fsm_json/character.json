@@ -1,18 +1,286 @@
 {
-    "regions" : [
-        {"name": "Idle_left", "x": 100, "y": 600, "imageLoc": "./images/slimeIdleLeft.png"},
-        
-        {"name": "Idle_right", "x": 0, "y": 600, "imageLoc": "./images/slimeIdleRight.png"},
-        {"name": "Move_left", "x": 0, "y": 600, "imageLoc": "./images/slimeMoveLeft.png"},
-        {"name": "Move_right", "x": 0, "y": 600, "imageLoc": "./images/slimeMoveRight.png"},
-        {"name": "Jump_left", "x": 0, "y": 600, "imageLoc": "./images/slimeJumpLeft.png"},
-        {"name": "Jump_right", "x": 0, "y": 600, "imageLoc": "./images/slimeJumpRight.png"},
+	"regions" : [
+		{"name": "Character", "x": 160, "y": 500 , "imageLoc": "./images/idle/idle_Right1.png"},
 
-        {"name": "UP", "x": 200, "y": 500 , "imageLoc": "./images/UP.png"},
-        {"name": "LEFT", "x": 100, "y": 600 , "imageLoc": "./images/LEFT.png"},
-        {"name": "RIGHT", "x": 300, "y": 600 , "imageLoc": "./images/RIGHT.png"}
-    ],
-    "states"  : [
+		{"name": "UP", "x": 160, "y": 350 , "imageLoc": "./images/REG/UP.png"},
+		{"name": "DOWN", "x": 160, "y": 650 , "imageLoc": "./images/REG/DOWN.png"},
+		{"name": "LEFT", "x": 10, "y": 500 , "imageLoc": "./images/REG/LEFT.png"},
+		{"name": "RIGHT", "x": 310, "y": 500 , "imageLoc": "./images/REG/RIGHT.png"}
 
-    ]
+	],
+	"states"  : [
+		
+		{"name": "IR1",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR11",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right2.png"}
+						]
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
+					}
+			]
+		},
+		{"name": "IR11",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR12",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right2.png"}
+						]
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
+					}
+			]
+		},
+		{"name": "IR12",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR13",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right2.png"}
+						]
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
+					}
+			]
+		},
+		{"name": "IR13",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR14",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right2.png"}
+						]
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
+					}
+			]
+		},
+		{"name": "IR14",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR2",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right2.png"}
+						]
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
+					}
+			]
+		},
+
+		{"name": "IR2",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR21",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right3.png"}
+						]
+				
+					}
+			]
+		},
+		{"name": "IR21",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR22",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right3.png"}
+						]
+				
+					}
+			]
+		},
+		{"name": "IR22",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR23",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right3.png"}
+						]
+				
+					}
+			]
+		},
+		{"name": "IR23",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR24",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right3.png"}
+						]
+				
+					}
+			]
+		},
+		{"name": "IR24",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR3",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right3.png"}
+						]
+				
+					}
+			]
+		},
+
+		{"name": "IR3",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR31",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right4.png"}
+						]
+				
+					}
+			]
+		},
+		{"name": "IR31",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR32",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right4.png"}
+						]
+				
+					}
+			]
+		},
+		{"name": "IR32",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR33",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right4.png"}
+						]
+				
+					}
+			]
+		},
+		{"name": "IR33",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR34",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right4.png"}
+						]
+				
+					}
+			]
+		},
+		{"name": "IR34",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR4",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right4.png"}
+						]
+				
+					}
+			]
+		},
+
+		{"name": "IR4",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR41",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+				
+					}
+			]
+		},
+		{"name": "IR41",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR42",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+				
+					}
+			]
+		},
+		{"name": "IR42",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR43",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+				
+					}
+			]
+		},
+		{"name": "IR43",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR44",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+				
+					}
+			]
+		},
+		{"name": "IR44",
+			"transitions": [
+					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
+						"target" : "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+				
+					}
+			]
+		},
+
+
+		{"name": "jumpR_active",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "JR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right1.png"}
+						]
+					},
+					
+					{	"onEvent" : {"evtType": "release", "region": "UP"},
+						"target": "jumpR_active"
+					}
+					
+			]
+		}
+
+	]
 }
