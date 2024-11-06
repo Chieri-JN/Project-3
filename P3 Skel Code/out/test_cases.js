@@ -60,9 +60,19 @@ function test3() {
 }
 //-------------------------------------------------------------------
 // Custom FSM interactor 
+// FSM for slime sprite interactions
+// states
+/*
+    - Idle Left
+    - Idle Right
+    - Move Left
+    - Morve right
+    - Jump Left
+    - Jump Rights
+*/
 function customFSM() {
-    // let fsmInt = new FSMInteractor(undefined, 0,0);
-    // root.addChild(fsmInt);
-    // fsmInt.startLoadFromJson("./fsm_json/custom.json");
+    let fsmInt = new FSMInteractor(undefined, 0, 0);
+    root.addChild(fsmInt);
+    fsmInt.startLoadFromJson("./fsm_json/slime.json");
 }
 //# sourceMappingURL=test_cases.js.map

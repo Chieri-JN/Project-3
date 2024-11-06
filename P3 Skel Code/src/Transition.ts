@@ -112,7 +112,6 @@ export class Transition {
                 return;
             }
         }
-
         // no matching state name, so generate an error message
         Err.emit(`State '${this._targetName}' in transition does not match any state.`);
     }
