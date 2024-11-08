@@ -75,6 +75,7 @@ function test3() {
 
     Sprites acquired from https://bagong-games.itch.io/hana-caraka-base-character
 */
+// 		{"name": "CharacterRegion", "x": 88, "y": 428 , "w": 220, "h": 220},
 function customFSM() {
     let fsmInt = new FSMInteractor(undefined, 0, 0);
     root.addChild(fsmInt);
