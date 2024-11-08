@@ -63,19 +63,19 @@ function test3() {
 // FSM for slime sprite interactions
 // states
 /*
-    - Idle Left
-    - Idle Right
-    - Move Left
-    - Move right
-    - Jump Left
-    - Jump Rights
+    - Idle Left : move inside character box
+    - Idle Right : move inside character box
+    - Move Left : move inside left arrow box
+    - Move right : move inside right arrow box
+    - Jump Left: Press inside up arrow box then move inside up arrow box
+    - Jump Right : Press inside up arrow box then move inside up arrow box
     Maybe
-    - Damage left
-    - Damage Right
+    - Damage left w/ down button
+    - Damage Right w/ down button
 
     Sprites acquired from https://bagong-games.itch.io/hana-caraka-base-character
 */
-// 		{"name": "CharacterRegion", "x": 88, "y": 428 , "w": 220, "h": 220},
+// 	{"name": "DOWN", "x": 160, "y": 650 , "imageLoc": "./images/REG/DOWN.png"},
 function customFSM() {
     let fsmInt = new FSMInteractor(undefined, 0, 0);
     root.addChild(fsmInt);

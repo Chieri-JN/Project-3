@@ -3,7 +3,7 @@
 		{"name": "Character", "x": 160, "y": 500 , "imageLoc": "./images/idle/idle_Right1.png"},
 
 		{"name": "UP", "x": 160, "y": 350 , "imageLoc": "./images/REG/UP.png"},
-		{"name": "DOWN", "x": 160, "y": 650 , "imageLoc": "./images/REG/DOWN.png"},
+	
 		{"name": "LEFT", "x": 10, "y": 500 , "imageLoc": "./images/REG/LEFT.png"},
 		{"name": "RIGHT", "x": 310, "y": 500 , "imageLoc": "./images/REG/RIGHT.png"}
 
@@ -236,6 +236,9 @@
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
 						]
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
+					},
 					{ "onEvent": {"evtType": "enter", "region": "LEFT"},
 						"target": "WL1",
 						"actions": [
@@ -268,6 +271,9 @@
 									{"act": "clear_image", "region": "Character"},
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
 						]
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "LEFT"},
 						"target": "WL1",
@@ -363,12 +369,15 @@
 						]
 				
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
+					},
 					{ "onEvent": {"evtType": "enter", "region": "LEFT"},
-					"target": "WL1",
-					"actions": [
-						{"act": "clear_image", "region": "Character"},
-						{"act": "set_image", "region": "Character", "param": "./images/walk/walk_Left1.png"}
-					]
+						"target": "WL1",
+						"actions": [
+							{"act": "clear_image", "region": "Character"},
+							{"act": "set_image", "region": "Character", "param": "./images/walk/walk_Left1.png"}
+						]
 
 					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
@@ -389,6 +398,9 @@
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right4.png"}
 						]
 				
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "LEFT"},
 						"target": "WL1",
@@ -417,6 +429,9 @@
 						]
 				
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
+					},
 					{ "onEvent": {"evtType": "enter", "region": "LEFT"},
 						"target": "WL1",
 						"actions": [
@@ -444,6 +459,9 @@
 						]
 				
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
+					},
 					{ "onEvent": {"evtType": "enter", "region": "LEFT"},
 						"target": "WL1",
 						"actions": [
@@ -470,6 +488,9 @@
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right4.png"}
 						]
 				
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "LEFT"},
 						"target": "WL1",
@@ -499,6 +520,17 @@
 						]
 				
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
+					},
+					{ "onEvent": {"evtType": "enter", "region": "LEFT"},
+						"target": "WL1",
+						"actions": [
+							{"act": "clear_image", "region": "Character"},
+							{"act": "set_image", "region": "Character", "param": "./images/walk/walk_Left1.png"}
+						]
+
+					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
 						"actions": [
@@ -517,6 +549,9 @@
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
 						]
 				
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "LEFT"},
 						"target": "WL1",
@@ -545,6 +580,9 @@
 						]
 				
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
+					},
 					{ "onEvent": {"evtType": "enter", "region": "LEFT"},
 						"target": "WL1",
 						"actions": [
@@ -572,6 +610,9 @@
 						]
 				
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
+					},
 					{ "onEvent": {"evtType": "enter", "region": "LEFT"},
 						"target": "WL1",
 						"actions": [
@@ -598,6 +639,9 @@
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
 						]
 				
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpR_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "LEFT"},
 						"target": "WL1",
@@ -1246,21 +1290,667 @@
 		,{"name": "jumpR_active",
 			"transitions":[
 					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
 						"target": "JR1",
 						"actions": [
 									{"act": "clear_image", "region": "Character"},
 									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right1.png"}
 						]
-					},
-					
-					{	"onEvent" : {"evtType": "release", "region": "UP"},
-						"target": "jumpR_active"
 					}
 					
 			]
 		},
 
 
+		{"name": "JR1",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR12",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right1.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JR12",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR13",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right1.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JR13",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR14",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right1.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JR14",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR2",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right2.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JR2",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR22",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right2.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JR22",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR23",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right2.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JR23",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR24",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right2.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JR24",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR3",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right3.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JR3",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR32",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right3.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JR32",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR33",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right3.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JR33",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR34",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right3.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JR34",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR4",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right4.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JR4",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR42",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right4.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JR42",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR43",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right4.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JR43",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR44",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right4.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JR44",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR5",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right5.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JR5",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR52",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right5.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JR52",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR53",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right5.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JR53",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR54",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right5.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JR54",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR6",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right6.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JR6",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR62",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right6.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JR62",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR63",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right6.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JR63",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR64",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right6.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JR64",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IR1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Right1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JR1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Right1.png"}
+						]
+					}		
+			]
+		}
 
 
 
@@ -1268,7 +1958,13 @@
 
 
 
-		{"name": "IL1",
+
+
+
+
+
+
+		,{"name": "IL1",
 			"transitions": [
 					{	"onEvent": {"evtType": "move_inside", "region" : "Character"},
 						"target" : "IL11",
@@ -1286,7 +1982,7 @@
 					},
 
 					{	"onEvent" : {"evtType": "press", "region": "UP"},
-						"target": "jumpR_active"
+						"target": "jumpL_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
@@ -1322,7 +2018,7 @@
 						]
 					},
 					{	"onEvent" : {"evtType": "press", "region": "UP"},
-						"target": "jumpR_active"
+						"target": "jumpL_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
@@ -1359,7 +2055,7 @@
 						]
 					},
 					{	"onEvent" : {"evtType": "press", "region": "UP"},
-						"target": "jumpR_active"
+						"target": "jumpL_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
@@ -1395,7 +2091,7 @@
 						]
 					},
 					{	"onEvent" : {"evtType": "press", "region": "UP"},
-						"target": "jumpR_active"
+						"target": "jumpL_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
@@ -1431,7 +2127,7 @@
 						]
 					},
 					{	"onEvent" : {"evtType": "press", "region": "UP"},
-						"target": "jumpR_active"
+						"target": "jumpL_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
@@ -1467,6 +2163,9 @@
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
 						]
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
+					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
 						"actions": [
@@ -1499,6 +2198,9 @@
 									{"act": "clear_image", "region": "Character"},
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
 						]
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
@@ -1533,6 +2235,9 @@
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
 						]
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
+					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
 						"actions": [
@@ -1565,6 +2270,9 @@
 									{"act": "clear_image", "region": "Character"},
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
 						]
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
@@ -1599,6 +2307,9 @@
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
 						]
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
+					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
 						"actions": [
@@ -1626,6 +2337,9 @@
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left4.png"}
 						]
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
+					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
 						"actions": [
@@ -1651,6 +2365,9 @@
 									{"act": "clear_image", "region": "Character"},
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left4.png"}
 						]
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
@@ -1679,6 +2396,9 @@
 						]
 				
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
+					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
 						"actions": [
@@ -1705,6 +2425,9 @@
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left4.png"}
 						]
 				
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
@@ -1733,6 +2456,16 @@
 						]
 				
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
+					},
+					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
+						"target": "WR1",
+						"actions": [
+							{"act": "clear_image", "region": "Character"},
+							{"act": "set_image", "region": "Character", "param": "./images/walk/walk_Right1.png"}
+						]
+					},
 					{ "onEvent": {"evtType": "enter", "region": "LEFT"},
 						"target": "WL1",
 						"actions": [
@@ -1753,6 +2486,9 @@
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
 						]
 				
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
@@ -1781,6 +2517,9 @@
 						]
 				
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
+					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
 						"actions": [
@@ -1807,6 +2546,9 @@
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
 						]
 				
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
@@ -1835,6 +2577,9 @@
 						]
 				
 					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
+					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
 						"actions": [
@@ -1861,6 +2606,9 @@
 									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
 						]
 				
+					},
+					{	"onEvent" : {"evtType": "press", "region": "UP"},
+						"target": "jumpL_active"
 					},
 					{ "onEvent": {"evtType": "enter", "region": "RIGHT"},
 						"target": "WR1",
@@ -2502,7 +3250,6 @@
 				}
 			]
 		}
-		
 
 
 
@@ -2512,7 +3259,679 @@
 
 
 
-		
+
+
+
+		,{"name": "jumpL_active",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left1.png"}
+						]
+					}
+					
+			]
+		},
+
+
+		{"name": "JL1",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL12",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left1.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JL12",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL13",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left1.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JL13",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL14",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left1.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JL14",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL2",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left2.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JL2",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL22",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left2.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JL22",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL23",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left2.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JL23",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL24",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left2.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JL24",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL3",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left3.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JL3",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL32",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left3.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JL32",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL33",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left3.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JL33",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL34",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left3.png"}
+						]
+					}
+					
+			]
+		},
+		{"name": "JL34",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL4",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left4.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JL4",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL42",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left4.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JL42",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL43",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left4.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JL43",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL44",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left4.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JL44",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL5",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left5.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JL5",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL52",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left5.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JL52",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL53",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left5.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JL53",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL54",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left5.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JL54",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL6",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left6.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JL6",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL62",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left6.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JL62",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL63",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left6.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JL63",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL64",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left6.png"}
+						]
+					}		
+			]
+		},
+		{"name": "JL64",
+			"transitions":[
+					{	"onEvent": {"evtType": "release", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					},
+					{	"onEvent": {"evtType": "exit", "region": "UP"},
+						"target": "IL1",
+						"actions": [
+								{"act": "clear_image", "region": "Character"},
+								{"act": "set_image", "region": "Character", "param": "./images/idle/idle_Left1.png"}
+						]
+					
+					},
+					{	"onEvent": {"evtType": "move_inside", "region": "UP"},
+						"target": "JL1",
+						"actions": [
+									{"act": "clear_image", "region": "Character"},
+									{"act": "set_image", "region": "Character", "param": "./images/jump/jump_Left1.png"}
+						]
+					}		
+			]
+		}
+
+
+
+
+
+
 
 	]
 }
